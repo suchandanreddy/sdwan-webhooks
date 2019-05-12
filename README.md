@@ -276,13 +276,21 @@ Sample JSON output on webhook server on receiving notifications from the vManage
 
 -	Above webhook logs corresponds to these alarms which were recieved by vManage.
 
+<br>
+
 ![alarms](images/alarms.png)
+
+<br>
 
 # Alert on Webex Teams Space
 
 - The script sends the message to provided Webex Teams Space/Room and here is the sample output. 
 
+<br>
+
 ![Webex_teams](images/webex_teams_message.png)
+
+<br>
 
 # References
 
