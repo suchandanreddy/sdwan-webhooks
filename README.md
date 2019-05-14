@@ -3,12 +3,12 @@
 # Webhooks
 
 -   Webhooks enable push-model mechanism to send notifications in real-time.
--   In order to retrieve alarms in real-time from the vManage using the REST API's, we need to poll for the data frequently. However by using webhooks, vManage can send HTTP POST request to the external systems in real-time once alarm is received. 
+-   In order to retrieve alarms in real-time from vManage using the REST APIs, we need to poll for the data frequently. However, by using webhooks, vManage can send an HTTP POST request to the external system in real-time once an alarm is received. 
 -   Webhooks are sometimes referred to as “Reverse APIs,” and we must design an API to consume or process the data sent via webhook.
 
 # Prerequisites
 
--  This feature is supported from vManage 18.3 release onwards
+-  This feature is supported from vManage 18.3 release onward
 
 # Requirements
 
@@ -94,7 +94,7 @@ Steps to enable webhook notifications for pushing alarms to external systems.
 
 (**Note:** Email notifications should be enabled in order to use Webhooks.)
 
-- For using only Webhooks, please provide dummy values so, Select Security option **None** and enter SMTP Server as **test.mail.com**
+- For using only Webhooks, please provide dummy values, e.g., Select Security option **None** and enter SMTP Server as **test.mail.com**
 
 - Enter dummy values for **From address** and **Reply to address** as **test@test.com**
 
@@ -110,7 +110,7 @@ List of webhooks or email notifications configured can be seen in section **Alar
 
 # Test Webhook
 
-From vManage shell, run curl command and send dummy HTTP POST request to webhook server to make sure it is reachable.
+From vManage shell, run `curl` command and send dummy HTTP POST request to webhook server to make sure it is reachable.
 
 **Sample output**
 
@@ -137,13 +137,13 @@ vmanage:~$ curl -v -X POST -H 'Content-type: application/json' http://<webhook-s
 * Closing connection 0
 ```
 
-# Set up Webhook server on ubuntu
+# Setup Webhook server on ubuntu
 
-Now let’s try to set up webhook server on ubuntu to accept notifications sent from vManage
+Now let’s try to setup webhook server on ubuntu to accept notifications sent from vManage
 
-- In order to accept HTTP post requests sent from vManage, we need to enable http web server and design API route.
+- In order to accept HTTP post requests sent from vManage, we need to enable HTTP web server and design API route.
 - Below code spins up flask web server listening on port 5001 for HTTP POST request
-- Defined alarms() function that accepts the POST request at route http://server-ip:port/ and extracts the data from request, then it sends message
+- Defined alarms() function accepts the POST request at route http://server-ip:port/ and extracts the data from request, then it sends message
 to Webex Teams Room. 
 
 ```
@@ -164,7 +164,7 @@ def alarms():
 
 ## Logs from Webhook Server:
 
-Spin up http webhook server as background process
+Spin up HTTP webhook server as background process
 
 ```
 $python3 webhook.py &
@@ -181,7 +181,7 @@ $python3 webhook.py &
  * Debugger PIN: 216-076-679
 ```
 
-Sample JSON output on webhook server on receiving notifications from the vManage.
+Sample JSON output on webhook server on receiving notifications from vManage.
 
 <pre>
 
@@ -274,7 +274,7 @@ Sample JSON output on webhook server on receiving notifications from the vManage
 
 # Alarms on vManage
 
--	Above webhook logs corresponds to these alarms which were recieved by vManage.
+-	Above webhook logs corresponds to these alarms that were received by vManage.
 
 <br>
 
@@ -284,7 +284,7 @@ Sample JSON output on webhook server on receiving notifications from the vManage
 
 # Alert on Webex Teams Space
 
-- The script sends the message to provided Webex Teams Space/Room and here is the sample output. 
+- The script sends the message to provided Webex Teams Space/Room. Here is sample output. 
 
 <br>
 
@@ -294,6 +294,6 @@ Sample JSON output on webhook server on receiving notifications from the vManage
 
 # References
 
-Online webhooks can be set up using https://webhook.site
+Online webhooks can be setup using [https://webhook.site]()
 
-SD-WAN Docs : https://sdwan-docs.cisco.com/Product_Documentation/vManage_How-Tos/Operation/Configure_Email_Notifications_for_Alarms
+SD-WAN Docs : [https://sdwan-docs.cisco.com/Product_Documentation/vManage_How-Tos/Operation/Configure_Email_Notifications_for_Alarms]()
