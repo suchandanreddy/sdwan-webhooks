@@ -43,6 +43,10 @@ For MAC OSX and Ubuntu Environment:
 ```
 export bearer_token=<authorization bearer token>
 export room_id=<webex teams room-id>
+export gmail_username=<gmail username>
+export gmail_password=<gmail password>
+export sender_address=<email sender address>
+export to_address=<email receiver address>
 ```
 
 For Windows Environment:
@@ -50,6 +54,10 @@ For Windows Environment:
 ```
 set bearer_token=<authorization bearer token>
 set room_id=<webex teams room-id>
+set gmail_username=<gmail username>
+set gmail_password=<gmail password>
+set sender_address=<email sender address>
+set to_address=<email receiver address>
 ```
 
 # vManage Configuration
@@ -291,6 +299,10 @@ Sample JSON output on webhook server on receiving notifications from vManage.
 ![Webex_teams](images/webex_teams_message.png)
 
 <br>
+
+# Email alert sent by webhook.py script
+
+![Email_Notification](images/email_notifications.png)
 
 # References
 
